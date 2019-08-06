@@ -1,1 +1,10 @@
-<p>student-add works!</p>
+<form [formGroup]="studentForm" (ngSubmit)="addStudent()">
+
+    <input type="text" placeholder="Roll Number" formControlName="rollNo" />
+    <input type="text" placeholder="First Name" formControlName="firstName" />
+    <input type="text" placeholder="Last Name" formControlName="lastName" />
+
+    <input type="submit" value="Add Student" />
+</form>
+
+<button (click)="goBack()"> Back </button>

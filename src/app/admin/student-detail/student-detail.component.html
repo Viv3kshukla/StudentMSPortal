@@ -1,1 +1,22 @@
-<p>student-detail works!</p>
+
+
+<ul *ngIf="student">
+    <li>Student Roll : {{student.rollNo}}</li>
+    <li>Student FirstName : {{student.firstName}}</li>
+    <li>Student LastName : {{student.lastName}}</li>
+</ul>
+
+<button (click)="goBack()"> Back </button>
+
+<button (click)="editStudent()"> Edit </button>
+
+<button (click)="deleteStudent()"> Delete </button>
+
+<div *ngIf="editPage;then editFormTemplate"> </div>
+<ng-template #editFormTemplate>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="First Name" formControlName="firstName" />
+            <input type="text" placeholder="Last Name" formControlName="lastName" />
+            <input type="submit" value="Update Student" />
+    </form>
+</ng-template>

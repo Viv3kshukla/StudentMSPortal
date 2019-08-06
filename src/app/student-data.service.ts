@@ -24,6 +24,12 @@ export class StudentDataService {
     return this.studentsList;
   }
 
+  updateStudent(student : Student){
+    this.removeStudent(student.rollNo);
+    this.addStudent(student);
+    return student;
+  }
+
   getAllStudents() {
     return this.studentsList;
   }

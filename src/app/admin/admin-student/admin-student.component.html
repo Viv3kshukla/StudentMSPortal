@@ -6,7 +6,7 @@
             <th>Student LastName</th>
         </tr>
         <tr *ngFor="let student of studentList">
-            <td><a [routerLink]="['admin/students',student.rollNo]">{{student.rollNo}}</a></td>
+            <td><a [routerLink]="[student.rollNo]">{{student.rollNo}}</a></td>
             <td>{{student.firstName}}</td>
             <td>{{student.lastName}}</td>
         </tr>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StudentDataService } from 'src/app/student-data.service';
 import { Student } from 'src/app/student';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-add',
@@ -10,7 +11,7 @@ import { Student } from 'src/app/student';
 })
 export class StudentAddComponent implements OnInit {
 
-  constructor(private formsBuilder: FormBuilder, private dataService: StudentDataService) { }
+  constructor(private router:Router, private formsBuilder: FormBuilder, private dataService: StudentDataService) { }
 
   studentForm: FormGroup;
   private newStudent: any;
@@ -27,8 +28,12 @@ export class StudentAddComponent implements OnInit {
 
   addStudent () {
     this.newStudent = new Student(this.studentForm.value);
-    console.log(this.newStudent);
     this.dataService.addStudent(this.newStudent);
+    console.log(this.dataService.getAllStudents());
+  }
+
+  goBack() {
+    this.router.navigate(['/admin','students']);
   }
 
 }
