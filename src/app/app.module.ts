@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminModule } from './admin/admin.module';
 import { StudentModule } from './student/student.module';
+import { StudentMainComponent } from './student-main/student-main.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StudentModule } from './student/student.module';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StudentMainComponent
   ],
   imports: [
     AdminModule,

@@ -4,9 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminMainComponent } from './admin-main/admin-main.component';
 import { AuthGuard } from '../auth.guard';
+import { AdminStudentComponent } from './admin-student/admin-student.component';
+import { StudentAddComponent } from './student-add/student-add.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 @NgModule({
-  declarations: [AdminMainComponent],
+  declarations: [AdminMainComponent, AdminStudentComponent, StudentAddComponent, StudentDetailComponent],
   imports: [
     CommonModule,
     FormsModule,
