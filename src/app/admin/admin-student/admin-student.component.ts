@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentDataService } from 'src/app/student-data.service';
 
 @Component({
   selector: 'app-admin-student',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminStudentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: StudentDataService) { }
+
+  studentList: any = [];
 
   ngOnInit() {
+    this.studentList = this.dataService.getAllStudents();
   }
 
 }

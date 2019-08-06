@@ -1,1 +1,14 @@
-<p>admin-student works!</p>
+<div class="container">
+    <table>
+        <tr>
+            <th>Student RollNo</th>
+            <th>Student FirstName</th>
+            <th>Student LastName</th>
+        </tr>
+        <tr *ngFor="let student of studentList">
+            <td><a [routerLink]="['admin/students',student.rollNo]">{{student.rollNo}}</a></td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+        </tr>
+    </table>
+</div>
