@@ -18,8 +18,8 @@ import { StudentMainComponent } from './student-main/student-main.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    StudentMainComponent,
     PageNotFoundComponent,
-    StudentMainComponent
   ],
   imports: [
     AdminModule,

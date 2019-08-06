@@ -14,18 +14,29 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      {path: 'admin', component: AdminMainComponent, canActivate: [AuthGuard]},
+      {
+        path: 'admin',
+        component: AdminMainComponent,
+        canActivate: [AuthGuard],
+        pathMatch: 'full',
+      },
       {
         path: 'admin/students', 
         component: AdminStudentComponent,
         canActivate: [AuthGuard],
-        children: [
-          {
-            path: 'add',
-            component: StudentAddComponent
-          },
-        ]
       },
+      {
+        path: 'admin/students/add',
+        component: StudentAddComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'admin/students/:rollNo',
+        component: StudentDetailComponent,
+        canActivate: [AuthGuard],
+      },
+        
+    
 
       // {
       //   path: 'products/:id', 
